@@ -1,3 +1,6 @@
+---
+title: Tackling covariate shift with node-based Bayesian neural networks
+---
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/AaltoPML/node-BNN-covariate-shift/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
