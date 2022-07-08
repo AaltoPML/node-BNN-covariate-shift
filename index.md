@@ -1,5 +1,6 @@
 ---
 title: Tackling covariate shift with node-based Bayesian neural networks
+description: Trung Trinh, Markus Heinonen, Luigi Acerbi, Samuel Kaski
 ---
 ## Welcome to GitHub Pages
 
