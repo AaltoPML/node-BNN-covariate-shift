@@ -35,6 +35,16 @@ The resulting model is aptly named *Bayesian neural networks (BNNs)*.
 Due to the large amounts of parameters in a modern NNs, it is computationally expensive to approximate the posterior \\(p(\theta \| \mathcal{D})\\). 
 Furthermore, a recent work have showed that BNNs with high fidelity posterior approximations actually perform worse than maximum-a-posteriori (MAP) models under corruptions [cite].
 
+## Node-based Bayesian neural networks
+
+Node-BNNs are recently introduced as an efficient alternative to standard weight-based BNNs.
+In a node-BNN, we keep the parameters deterministic while inducing uncertainty over the outputs by multiplying hidden nodes with latent random variables:
+
+\begin{equation}
+\begin{aligned}
+    \mathbf{f}^{(\ell)} (\mathbf{x}, \mathcal{Z}) = \sigma\left(\mathbf{W}^{(\ell)}\underbrace{(\mathbf{f}^{(\ell-1)} (\mathbf{x}, \mathcal{Z})) \circ \mathbb{z}^{(\ell)})}_{\text{Hadamard product}} + \mathbb{b}^{(\ell)} \right)
+\end{aligned}
+\end{equation}
 
 ### References
 
