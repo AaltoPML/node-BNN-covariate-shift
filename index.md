@@ -42,7 +42,7 @@ In a node-BNN, we keep the parameters deterministic while inducing uncertainty o
 
 \begin{equation}
 \begin{aligned}
-    \mathbf{f}^{(\ell)} (\mathbf{x}, \mathcal{Z}) = \sigma\left(\mathbf{W}^{(\ell)}\underbrace{(\mathbf{f}^{(\ell-1)} (\mathbf{x}, \mathcal{Z})) \circ \mathbf{z}^{(\ell)})}_{\text{Hadamard product}} + \mathbf{b}^{(\ell)} \right)
+    \mathbf{f}^{(\ell)} (\mathbf{x}, \mathcal{Z}) = \sigma\left(\mathbf{W}^{(\ell)}\underbrace{(\mathbf{f}^{(\ell-1)} (\mathbf{x}, \mathcal{Z}) \circ \mathbf{z}^{(\ell)})}_{\text{Hadamard product}} + \mathbf{b}^{(\ell)} \right)
 \end{aligned}
 \end{equation}
 
