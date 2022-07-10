@@ -13,9 +13,9 @@ In this work, we provide insights into the robustness of node-BNNs under corrupt
 ## Covariate shift due to input corruptions
 
 Generalization is a core problem in machine learning.
-The standard set up in supervised learning is to fit a model to a training dataset \\(\mathcal{D}_{train}\\) and then evaluate its generalization ability on a separate test dataset \\(\mathcal{D}_{test}\\). Both of these datasets are assumed to contain independent and identically distributed (i.i.d.) samples from the data distribution \(p(x)\).
+The standard set up in supervised learning is to fit a model to a training dataset \\(\mathcal{D}\_{train}\\) and then evaluate its generalization ability on a separate test dataset \\(\mathcal{D}\_{test}\\). Both of these datasets are assumed to contain independent and identically distributed (i.i.d.) samples from the data distribution \(p(x)\).
 
-However, performance measured on \\(\mathcal{D}_{test}\\) only reflects the model's generalization on in-distribution (ID) inputs, i.e., samples coming from \(p(x)\). In an open world setting, the model might encounter inputs coming from a different distribution \(p^\prime(x)\). These inputs are called out-of-distribution (OOD) samples. Currently, neural networks have excellent ID performance while behave unpredictably on OOD samples.
+However, performance measured on \\(\mathcal{D}\_{test}\\) only reflects the model's generalization on in-distribution (ID) inputs, i.e., samples coming from \(p(x)\). In an open world setting, the model might encounter inputs coming from a different distribution \(p^\prime(x)\). These inputs are called out-of-distribution (OOD) samples. Currently, neural networks have excellent ID performance while behave unpredictably on OOD samples.
 
 
 
