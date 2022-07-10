@@ -54,6 +54,7 @@ As the number of nodes is much smaller than the number of weights, it is easier 
 ## Training method
 
 We use variational inference to train a node-BNN.
+We approximate the complex joint posterior \\( p(\theta, \mathcal{Z} \| \mathcal{D})\\) using a simpler parametric distribution \\( q\_{\hat{\theta}, \phi}(\theta, \mathcal{Z}) \\)
 
 ## References
 
