@@ -10,7 +10,7 @@ Node-based Bayesian neural networks (node-BNNs) have demonstrated good generaliz
 
 In this work, we provide insights into the robustness of node-BNNs under corruptions and propose a simple method to further improve this robustness.
 
-## Covariate shift due to input corruptions
+# Covariate shift due to input corruptions
 
 Generalization is a core problem in machine learning.
 The standard set up in supervised learning is to fit a model to a training dataset \\(\mathcal{D}\_{train}\\) and then evaluate its generalization ability on a separate test dataset \\(\mathcal{D}\_{test}\\). Both of these datasets are assumed to contain independent and identically distributed (i.i.d.) samples from the data distribution \\(p(x)\\).
@@ -23,7 +23,7 @@ In this work, we focus on improving generalization of NNs under *input corruptio
 Input corruptions can happen due to noises or sensor malfunctions.
 Some examples of image corruptions are shown below.
 
-## Bayesian neural networks
+# Bayesian neural networks
 
 Bayesian methods are often applied to covariate shift problems.
 The standard Bayesian treatment of NNs is to place a prior distribution \\(p(\theta)\\) over the parameters \\(\theta\\) (weights and biases) and infer their posterior distribution \\(p(\theta \| \mathcal{D})\\) given the training data \\(\mathcal{D}\\) using Bayes' rule:
@@ -35,9 +35,9 @@ The resulting model is aptly named *Bayesian neural networks (BNNs)*.
 Due to the large amounts of parameters in a modern NNs, it is computationally expensive to approximate the posterior \\(p(\theta \| \mathcal{D})\\). 
 Furthermore, a recent work have showed that BNNs with high fidelity posterior approximations actually perform worse than maximum-a-posteriori (MAP) models under corruptions [cite].
 
-## Node-based Bayesian neural networks
+# Node-based Bayesian neural networks
 
-### Definition
+## Definition
 
 Node-BNNs are recently introduced as an efficient alternative to standard weight-based BNNs.
 In a node-BNN, we keep the weights and biases deterministic while inducing uncertainty over the outputs by multiplying hidden nodes with latent random variables:
@@ -55,7 +55,7 @@ There are two types of parameter in a node-BNN:
 
 As the number of nodes is much smaller than the number of weights, it is easier to train a node-BNN than a weight-BNN since we significantly decrease the size of the posterior to be inferred.
 
-### Training method
+## Training method
 
 We use variational inference to train a node-BNN.
 
