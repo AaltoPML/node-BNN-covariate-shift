@@ -44,14 +44,14 @@ In a node-BNN, we keep the weights and biases deterministic while inducing uncer
 
 \begin{equation}
 \begin{aligned}
-    \mathbf{f}^{(\ell)} (\mathbf{x}, \mathcal{Z}) = \sigma\left(\mathbf{W}^{(\ell)}\underbrace{(\mathbf{f}^{(\ell-1)} (\mathbf{x}, \mathcal{Z}) \circ \mathbf{z}^{(\ell)})}_{\text{Hadamard product}} + \mathbf{b}^{(\ell)} \right)
+    \mathbf{f}^{(\ell)} (\mathbf{x}, \mathcal{Z}) = \sigma\bigg(\mathbf{W}^{(\ell)}\underbrace{(\mathbf{f}^{(\ell-1)} (\mathbf{x}, \mathcal{Z}) \circ \mathbf{z}^{(\ell)})}_{\text{Hadamard product}} + \mathbf{b}^{(\ell)} \bigg)
 \end{aligned}
 \end{equation}
 
 There are two types of parameter in a node-BNN:
 
 - The weights and biases \\(\theta = \\{(\mathbf{W}^{(\ell)}, \mathbf{b}^{(\ell)}) \\}\_{\ell=1}^L \\) which we find a MAP estimate.
-- The latent variables \\(\mathcal{Z} = \\{ \mathbf{z}^{(\ell)} \\}\_{\ell=1}^L \\) where we infer the posterior distribution.
+- The latent variables \\(\mathcal{Z} = \\{ \mathbf{z}^{(\ell)} \\}\_{\ell=1}^L \\) which we infer the posterior distribution.
 
 As the number of nodes is much smaller than the number of weights, it is easier to train a node-BNN than a weight-BNN since we significantly decrease the size of the posterior to be inferred.
 
