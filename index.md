@@ -37,8 +37,10 @@ Furthermore, a recent work have showed that BNNs with high fidelity posterior ap
 
 ## Node-based Bayesian neural networks
 
+### Definition
+
 Node-BNNs are recently introduced as an efficient alternative to standard weight-based BNNs.
-In a node-BNN, we keep the parameters deterministic while inducing uncertainty over the outputs by multiplying hidden nodes with latent random variables:
+In a node-BNN, we keep the weights and biases deterministic while inducing uncertainty over the outputs by multiplying hidden nodes with latent random variables:
 
 \begin{equation}
 \begin{aligned}
@@ -46,5 +48,16 @@ In a node-BNN, we keep the parameters deterministic while inducing uncertainty o
 \end{aligned}
 \end{equation}
 
-### References
+There are two types of parameter in a node-BNN:
+
+- The weights and biases \\(\theta = \\{(\mathbf{W}^{(\ell)}, \mathbf{b}^{(\ell)}) \\}\_{\ell=1}^L \\) which we find a MAP estimate.
+- The latent variables \\(\mathcal{Z} = \\{ \mathbf{z}^{(\ell)} \\}\_{\ell=1}^L \\) where we infer the posterior distribution.
+
+As the number of nodes is much smaller than the number of weights, it is easier to train a node-BNN than a weight-BNN since we significantly decrease the size of the posterior to be inferred.
+
+### Training method
+
+We use variational inference to train a node-BNN.
+
+## References
 
