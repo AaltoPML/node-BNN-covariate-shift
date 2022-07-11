@@ -64,5 +64,8 @@ where:
 - \\(q_{\hat{\theta}}(\theta) = \delta(\theta-\hat{\theta})\\) is a Dirac delta measure and \\(\hat{\theta}\\) is the MAP estimation of \\(\theta\\).
 - \\(q_{\phi}(\mathcal{Z})\\) is a mixture of Gaussians.
 
+Here \\( q\_{\hat{\theta}, \phi}(\theta, \mathcal{Z}) \\) is called the variational posterior and \\((\hat{\theta}, \phi)\\) are the variational parameters.
+
+
 ## References
 
