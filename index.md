@@ -54,7 +54,16 @@ As the number of nodes is much smaller than the number of weights, it is easier 
 ## Training method
 
 We use variational inference to train a node-BNN.
-We approximate the complex joint posterior \\( p(\theta, \mathcal{Z} \| \mathcal{D})\\) using a simpler parametric distribution \\( q\_{\hat{\theta}, \phi}(\theta, \mathcal{Z}) \\)
+We approximate the complex joint posterior \\( p(\theta, \mathcal{Z} \| \mathcal{D})\\) using a simpler parametric distribution \\( q\_{\hat{\theta}, \phi}(\theta, \mathcal{Z}) \\):
+\begin{equation}
+\begin{aligned}
+    q_{\hat{\theta}, \phi}(\theta, \mathcal{Z}) &= q_{\hat{\theta}}(\theta)q_{\phi}(\mathcal{Z}) \\
+                                                &= \delta(\theta-\hat{\theta})q_{\phi}(\mathcal{Z})
+\end{aligned}
+\end{equation}
+where:
+- \\(q_{\hat{\theta}}(\theta) = \delta(\theta-\hat{\theta})\\) is a Dirac delta measure and \\(\hat{\theta}\\) is the MAP estimation of \\(\theta\\).
+- \\(q_{\phi}(\mathcal{Z})\\) is a mixture of Gaussians.
 
 ## References
 
