@@ -80,10 +80,16 @@ Our goal is to find \\( (\hat{\theta}, \phi) \\) minimizing \\( \mathrm{KL}[q\_{
 
 If we consider each corrupted input \\( \mathbf{x}^c \\) as a sum of the original input \\( \mathbf{x} \\) and a corruption mask \\(\mathbf{m}\\)
 
-then given a sample \\( \tilde{\mathcal{Z}} \sim p(\mathcal{Z}) \\), one can approximate the corresponding corruption mask \\(\mathbf{m}^* \\) minimizing the following loss function using gradient descent:
+then given a sample \\( \tilde{\mathcal{Z}} \sim p(\mathcal{Z}) \\), our objective is to find a corruption mask \\( \tilde{\mathbf{m}} \\) such that:
 
 \begin{equation}
-    \mathbf{m}^* = \operatorname{\arg\,min}\_{\mathbf{m}} \frac{1}{2} \underbrace{\|\|\mathbf{f}(\mathbf{x}; \mathcal{Z}) - \hat{\mathbf{f}}(\mathbf{x} + \mathbf{m}) \|\|\_{2}^{2}}\_{\text{Output matching}} + \frac{\lambda}{2} \underbrace{\|\| \mathbf{m} \|\|\_{2}^{2}}\_{\text{L2-regularization}}
+    \mathbf{f}(\mathbf{x}; \mathcal{Z}) = \hat{\mathbf{f}}(\mathbf{x} + \tilde{\mathbf{m}})
+\end{equation}
+
+However, this objective does not have a closed-form solution due to the non-linearity of the NN. Thus, one can approximate \\( \tilde{\mathbf{m}} \\) by minimizing the following loss function using gradient descent:
+
+\begin{equation}
+    \tilde{\mathbf{m}} \approx \operatorname*{\arg\,min}\_{\mathbf{m}} \underbrace{\frac{1}{2} \|\|\mathbf{f}(\mathbf{x}; \mathcal{Z}) - \hat{\mathbf{f}}(\mathbf{x} + \mathbf{m}) \|\|\_{2}^{2}}\_{\text{Output matching}} + \underbrace{\frac{\lambda}{2} \|\| \mathbf{m} \|\|\_{2}^{2}}\_{\text{L2-regularization}}
 \end{equation}
 
 ## References
