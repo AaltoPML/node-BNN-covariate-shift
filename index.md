@@ -72,9 +72,9 @@ Our goal is to find \\( (\hat{\theta}, \phi) \\) minimizing \\( \mathrm{KL}[q\_{
     \underbrace{\mathcal{L}(\hat{\theta}, \phi)}\_{\text{ELBO}} = \underbrace{\mathbb{E}\_{q\_{\phi}(\mathcal{Z})}[\log p(\mathcal{D} \| \hat{\theta}, \mathcal{Z})]}\_{\text{expected log-likelihood}} - \underbrace{\mathrm{KL}[q\_{\phi}(\mathcal{Z}) \|\| p(\mathcal{Z})]}\_{\text{KL divergence}} + \underbrace{\log p(\hat{\theta})}\_{\text{log prior}}
 \end{equation}
 
-### Why are node-BNNs robust against input corruptions?
+# Why are node-BNNs robust against input corruptions?
 
-> **Proposition**: We theorize that the latent distribution \\( p(\mathcal{Z}) \\) induces a distribution of implicit corruptions in the input space, and by training under these faux corruptions, node-BNNs become robust against natural corruptions.
+> **Proposition**: We theorize that the latent distribution \\( p(\mathcal{Z}) \\) induces a distribution of implicit corruptions \\(p(\mathbf{x}^{corrupt})\\) in the input space, and by training under these faux corruptions, node-BNNs become robust against natural corruptions.
 
 ## References
 
