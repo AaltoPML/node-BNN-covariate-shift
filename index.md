@@ -74,7 +74,17 @@ Our goal is to find \\( (\hat{\theta}, \phi) \\) minimizing \\( \mathrm{KL}[q\_{
 
 # Why are node-BNNs robust against input corruptions?
 
-> **Proposition**: We theorize that the latent distribution \\( p(\mathcal{Z}) \\) induces a distribution of implicit corruptions \\(p(\mathbf{x}^{corrupt})\\) in the input space, and by training under these faux corruptions, node-BNNs become robust against natural corruptions.
+> **Proposition**: We theorize that the latent distribution \\( p(\mathcal{Z}) \\) induces a distribution of *implicit corruptions* \\(p(\mathbf{x}^{c})\\) in the input space, and by training under these faux corruptions, node-BNNs become robust against natural corruptions.
+
+## Approximating the implicit corruptions
+
+If we consider each corrupted input \\( \mathbf{x}^c \\) as a sum of the original input \\( \mathbf{x} \\) and a corruption mask \\(\mathbf{m}\\)
+
+then given a sample \\( \tilde{\mathcal{Z}} \sim p(\mathcal{Z}) \\), one can approximate the corresponding corruption mask \\(\mathbf{m}^* \\) minimizing the following loss function using gradient descent:
+
+\begin{equation}
+    \mathbf{m}^* = \operatorname{\arg\,min}\_{\mathbf{m}} \frac{1}{2} \underbrace{\|\|\mathbf{f}(\mathbf{x}; \mathcal{Z}) - \hat{\mathbf{f}}(\mathbf{x} + \mathbf{m}) \|\|\_{2}^{2}}\_{\text{Output matching}} + \frac{\lambda}{2} \underbrace{\|\| \mathbf{m} \|\|\_{2}^{2}}\_{\text{L2-regularization}}
+\end{equation}
 
 ## References
 
