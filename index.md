@@ -66,10 +66,12 @@ where:
 
 Here \\( q\_{\hat{\theta}, \phi}(\theta, \mathcal{Z}) \\) is called the variational posterior and \\((\hat{\theta}, \phi)\\) are the variational parameters.
 
-Our goal is to find \\( \hat{\theta}, \phi \\) minimizing \\( \mathrm{KL}[q\_{\hat{\theta}, \phi}(\theta, \mathcal{Z}) \|\| p(\theta, \mathcal{Z} \| \mathcal{D})]\\), which is equivalent to maximizing the evidence lower-bound (ELBO):
+Our goal is to find \\( (\hat{\theta}, \phi) \\) minimizing \\( \mathrm{KL}[q\_{\hat{\theta}, \phi}(\theta, \mathcal{Z}) \|\| p(\theta, \mathcal{Z} \| \mathcal{D})]\\), which is equivalent to maximizing the evidence lower-bound (ELBO):
 
 \begin{equation}
+\begin{aligned}
     \mathcal{L}(\hat{\theta}, \phi) = \underbrace{\mathbb{E}_{q_{\phi}(\mathcal{Z})}[\log p(\mathcal{D} | \hat{\theta}, \mathcal{Z})]}_{\text{expected log-likelihood}} - \underbrace{\mathrm{KL}[q_{\phi}(\mathcal{Z}) || p(\mathcal{Z})]}_{\text{KL divergence}} + \underbrace{\log p(\hat{\theta})}_{\text{log prior}}
+\end{aligned}
 \end{equation}
 
 ## References
