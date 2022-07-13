@@ -46,8 +46,8 @@ In a node-BNN, we keep the weights and biases deterministic while inducing uncer
 
 There are two types of parameter in a node-BNN:
 
-- The weights and biases \\(\theta = \\{(\mathbf{W}^{(\ell)}, \mathbf{b}^{(\ell)}) \\}\_{\ell=1}^L \\) which we find a MAP estimate.
-- The latent variables \\(\mathcal{Z} = \\{ \mathbf{z}^{(\ell)} \\}\_{\ell=1}^L \\) which we infer the posterior distribution.
+1. The weights and biases \\(\theta = \\{(\mathbf{W}^{(\ell)}, \mathbf{b}^{(\ell)}) \\}\_{\ell=1}^L \\) which we find a MAP estimate.
+2. The latent variables \\(\mathcal{Z} = \\{ \mathbf{z}^{(\ell)} \\}\_{\ell=1}^L \\) which we infer the posterior distribution.
 
 As the number of nodes is much smaller than the number of weights, it is easier to train a node-BNN than a weight-BNN since we significantly decrease the size of the posterior to be inferred.
 
@@ -74,7 +74,7 @@ Our goal is to find \\( (\hat{\theta}, \phi) \\) minimizing \\( \mathrm{KL}[q\_{
 
 ### Why are node-BNNs robust against input corruptions?
 
-
+> **Proposition**: We theorize that the latent distribution \\( p(\mathcal{Z}) \\) induces a distribution of implicit corruptions in the input space, and by training under these faux corruptions, node-BNNs become robust against natural corruptions.
 
 ## References
 
