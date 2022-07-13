@@ -89,8 +89,12 @@ then given a sample \\( \tilde{\mathcal{Z}} \sim p(\mathcal{Z}) \\), our objecti
 However, this objective does not have a closed-form solution due to the non-linearity of the NN. Thus, one can approximate \\( \tilde{\mathbf{m}} \\) by minimizing the following loss function using gradient descent:
 
 \begin{equation}
-    \tilde{\mathbf{m}} \approx \operatorname*{\arg\,min}\_{\mathbf{m}} \underbrace{\frac{1}{2} \|\|\mathbf{f}(\mathbf{x}; \mathcal{Z}) - \hat{\mathbf{f}}(\mathbf{x} + \mathbf{m}) \|\|\_{2}^{2}}\_{\text{Output matching}} + \underbrace{\frac{\lambda}{2} \|\| \mathbf{m} \|\|\_{2}^{2}}\_{\text{L2-regularization}}
+    \tilde{\mathbf{m}} \approx \operatorname*{\argmin}\_{\mathbf{m}} \underbrace{\frac{1}{2} \|\|\mathbf{f}(\mathbf{x}; \mathcal{Z}) - \hat{\mathbf{f}}(\mathbf{x} + \mathbf{m}) \|\|\_{2}^{2}}\_{\text{Output matching}} + \underbrace{\frac{\lambda}{2} \|\| \mathbf{m} \|\|\_{2}^{2}}\_{\text{L2-regularization}}
 \end{equation}
+
+Below, we visualize the corruption masks of some images from the CIFAR-10 dataset.
+
+
 
 ## References
 
