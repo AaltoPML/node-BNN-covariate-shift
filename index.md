@@ -100,7 +100,7 @@ Below, we visualize the corruption masks of some images from the CIFAR-10 datase
 
 ## The \\(\gamma\\)-ELBO
 
-To encourage high latent entropy (the entropy of the latent variables), we add the \\(\gamma\\)-entropy term to the original ELBO in \\(\eqref{eq:elbo}\\). We call this new objective the \\(\gamma\\)-ELBO:
+To encourage high latent entropy (the entropy of the latent variables), we add the \\(\gamma-\\)entropy term to the original ELBO in \\(\eqref{eq:elbo}\\). We call this new objective the \\(\gamma\\)-ELBO:
 
 \begin{align}\label{eq:gamma_elbo}
     \underbrace{\mathcal{L}\_{\gamma}(\hat{\theta}, \phi)}\_{\text{The }\gamma-\text{ELBO}}
@@ -109,7 +109,7 @@ To encourage high latent entropy (the entropy of the latent variables), we add t
     &+ \underbrace{(\gamma+1)\mathbb{H}[q\_\phi(\mathcal{Z})]}\_{\text{variational entropy}} + \underbrace{\log p(\hat{\theta})}\_{\text{log weight prior}}
 \end{align}
 
-By maximizing the \\(\gamma-\\)ELBO, we balance between approximating the true posterior (via maximizing the original ELBO) and maximizing the latent entropy, with higher \\(\gamma\\) results in higher latent entropy.
+By maximizing the \\(\gamma-\\)ELBO with \\(\gamma > 0 \\), we balance between approximating the true posterior (via maximizing the original ELBO) and maximizing the latent entropy, with higher \\(\gamma\\) results in higher latent entropy.
 
 ## Connection to tempered posterior inference
 
@@ -122,6 +122,8 @@ where
     p\_\gamma(\theta, \mathcal{Z} \| \mathcal{D}) \propto p(\mathcal{D} \| \theta, \mathcal{Z})^{1/(\gamma+1)} p(\theta, \mathcal{Z})^{1/(\gamma+1)}
 \end{equation}
 Here both the likelihood and the prior are tempered with a temperature \\( \tau = \gamma + 1 \\).
+
+Since \\( \gamma > 0 \\), we have the temperature \\(\tau > 1 \\). In this case, we call the tempered posterior *hot posterior*.
 
 ## References
 
