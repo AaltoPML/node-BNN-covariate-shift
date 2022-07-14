@@ -100,15 +100,28 @@ Below, we visualize the corruption masks of some images from the CIFAR-10 datase
 
 ## The \\(\gamma\\)-ELBO
 
-To encourage high latent entropy, we add the \\(\gamma\\)-entropy term to the original ELBO in \\(\eqref{eq:elbo}\\). We call this new objective the \\(\gamma\\)-ELBO:
+To encourage high latent entropy (the entropy of the latent variables), we add the \\(\gamma\\)-entropy term to the original ELBO in \\(\eqref{eq:elbo}\\). We call this new objective the \\(\gamma\\)-ELBO:
 
-\begin{align}
+\begin{align}\label{eq:gamma_elbo}
     \underbrace{\mathcal{L}\_{\gamma}(\hat{\theta}, \phi)}\_{\text{The }\gamma-\text{ELBO}}
     &= \underbrace{\mathcal{L}(\hat{\theta}, \phi)}\_{\text{The original ELBO}} +  \underbrace{\gamma \mathbb{H}[q\_\phi(\mathcal{Z})]}\_{\text{The }\gamma-\text{entropy}} \newline
     &= \underbrace{\mathbb{E}\_{q\_{\phi}(\mathcal{Z})}[\log p(\mathcal{D} \| \hat{\theta}, \mathcal{Z})]}\_{\text{expected log-likelihood}} - \underbrace{\mathbb{H}[q\_\phi(\mathcal{Z}), p(\mathcal{Z})]}\_{\text{cross entropy}} \nonumber \newline
     &+ \underbrace{(\gamma+1)\mathbb{H}[q\_\phi(\mathcal{Z})]}\_{\text{variational entropy}} + \underbrace{\log p(\hat{\theta})}\_{\text{log weight prior}}
 \end{align}
 
+By maximizing the \\(\gamma-\\)ELBO, we balance between approximating the true posterior (via maximizing the original ELBO) and maximizing the latent entropy, with higher \\(\gamma\\) results in higher latent entropy.
+
+## Connection to tempered posterior inference
+
+It turns out that maximizing the \\(\gamma-\\)ELBO in \\(\eqref{eq:gamma_elbo}\\) is equivalent to minimizing the KL divergence between the variational posterior and a tempered true posterior:
+\begin{equation}
+    \mathrm{KL}[q\_{\hat{\theta},\phi}(\theta, \mathcal{Z}) \|\| p\_\gamma(\theta, \mathcal{Z} \| \mathcal{D})]
+\end{equation}
+where
+\begin{equation}
+    p\_\gamma(\theta, \mathcal{Z} \| \mathcal{D}) \propto p(\mathcal{D} \| \theta, \mathcal{Z})^{1/(\gamma+1)} p(\theta, \mathcal{Z})^{1/(\gamma+1)}
+\end{equation}
+Here both the likelihood and the prior are tempered with a temperature \\( \tau = \gamma + 1 \\).
 
 ## References
 
