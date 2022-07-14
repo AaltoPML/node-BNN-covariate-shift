@@ -126,7 +126,7 @@ Since \\( \gamma > 0 \\), we have the temperature \\(\tau > 1 \\). In this case,
 
 Overall, larger \\(\tau\\) makes the probability mass of the distribution less concentrated.
 
-Interestingly, 
+Interestingly, hot posteriors have been used in classical Bayesian statistics to alleviate model misspecification [cite]. One can view covariate shift as a model misspecification problem, since we use a model trained under different assumptions about the statistics of the data.
 
 ## References
 
