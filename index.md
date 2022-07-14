@@ -74,7 +74,7 @@ Our goal is to find \\( (\hat{\theta}, \phi) \\) minimizing \\( \mathrm{KL}[q\_{
 
 # Why are node-BNNs robust against input corruptions?
 
-> **Proposition**: We theorize that the latent distribution \\( p(\mathcal{Z}) \\) induces a distribution of *implicit corruptions* \\(p(\mathbf{x}^{c})\\) in the input space, and by training under these faux corruptions, node-BNNs become robust against natural corruptions.
+> **Proposition**: We theorize that the latent distribution (the distribution of the latent variables) \\( p(\mathcal{Z}) \\) induces a distribution of *implicit corruptions* \\(p(\mathbf{x}^{c})\\) in the input space, and by training under these faux corruptions, node-BNNs become robust against natural corruptions.
 
 ## Approximating the implicit corruptions
 
@@ -93,6 +93,10 @@ However, this objective does not have a closed-form solution due to the non-line
 \end{equation}
 
 Below, we visualize the corruption masks of some images from the CIFAR-10 dataset.
+
+# Improving robustness using entropic regularization
+
+> **Proposition**: Since the latent distribution induces a distribution of implicit corruptions in the input space, we theorize that increasing the entropy of the latent variables will diversify these corruptions, thereby enhancing the robustness of node-BNNs against natural corruptions.
 
 
 
