@@ -68,7 +68,7 @@ Here \\( q\_{\hat{\theta}, \phi}(\theta, \mathcal{Z}) \\) is called the variatio
 
 Our goal is to find \\( (\hat{\theta}, \phi) \\) minimizing \\( \mathrm{KL}[q\_{\hat{\theta}, \phi}(\theta, \mathcal{Z}) \|\| p(\theta, \mathcal{Z} \| \mathcal{D})]\\), which is equivalent to maximizing the evidence lower-bound (ELBO):
 
-\begin{equation}
+\begin{equation}\label{eq:elbo}
     \underbrace{\mathcal{L}(\hat{\theta}, \phi)}\_{\text{ELBO}} = \underbrace{\mathbb{E}\_{q\_{\phi}(\mathcal{Z})}[\log p(\mathcal{D} \| \hat{\theta}, \mathcal{Z})]}\_{\text{expected log-likelihood}} - \underbrace{\mathrm{KL}[q\_{\phi}(\mathcal{Z}) \|\| p(\mathcal{Z})]}\_{\text{KL divergence}} + \underbrace{\log p(\hat{\theta})}\_{\text{log prior}}
 \end{equation}
 
@@ -98,7 +98,7 @@ Below, we visualize the corruption masks of some images from the CIFAR-10 datase
 
 > **Proposition**: Since the latent distribution induces a distribution of implicit corruptions in the input space, we theorize that increasing the entropy of the latent variables will diversify these corruptions, thereby enhancing the robustness of node-BNNs against natural corruptions.
 
-
+From the ELBO in Eq. \\(\eqref{eq:elbo}\\) \\eqref{eq:elbo} \eqref{eq:elbo}
 
 ## References
 
