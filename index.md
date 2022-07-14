@@ -98,7 +98,15 @@ Below, we visualize the corruption masks of some images from the CIFAR-10 datase
 
 > **Proposition**: Since the latent distribution induces a distribution of implicit corruptions in the input space, we theorize that increasing the entropy of the latent variables will diversify these corruptions, thereby enhancing the robustness of node-BNNs against natural corruptions.
 
-From the ELBO in Eq. \\(\eqref{eq:elbo}\\) \\eqref{eq:elbo} \eqref{eq:elbo}
+## The \\(\gamma\\)-ELBO
+
+To encourage high latent entropy, we add the \\(\gamma\\)-entropy term to the original ELBO in \\(\eqref{eq:elbo}\\). We call this new objective the \\(\gamma\\)-ELBO:
+
+\begin{align}
+    \underbrace{\mathcal{L}\_{\gamma}(\hat{\theta}, \phi)}\_{\text{The }\gamma-\text{ELBO}}
+    &= \underbrace{\mathcal{L}(\hat{\theta}, \phi)}\_{\text{The original ELBO}} +  \underbrace{\gamma \mathbb{H}[q\_\phi(\mathcal{Z})]}\_{\text{The }\gamma-\text{entropy}}
+\end{align}
+
 
 ## References
 
