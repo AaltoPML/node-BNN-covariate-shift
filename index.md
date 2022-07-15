@@ -20,7 +20,10 @@ Currently, neural networks (NNs) have excellent ID performance while behave unpr
 
 In this work, we focus on improving generalization of NNs under *input corruptions*, which is a form of covariate shift.
 Input corruptions can happen due to noises or sensor malfunctions.
-Some examples of image corruptions are shown below.
+Some examples of image corruptions from [cite] are shown below:
+
+![Alt text](./assets/frog.svg)
+<img src="./assets/frog.svg">
 
 # Bayesian neural networks
 Bayesian methods are often applied to covariate shift problems.
@@ -127,6 +130,10 @@ Since \\( \gamma > 0 \\), we have the temperature \\(\tau > 1 \\). In this case,
 Overall, larger \\(\tau\\) makes the probability mass of the distribution less concentrated.
 
 Interestingly, hot posteriors have been used in classical Bayesian statistics to alleviate model misspecification [cite]. One can view covariate shift as a model misspecification problem, since we use a model trained under different assumptions about the statistics of the data.
+
+# Experiments
+
+# Conclusions
 
 ## References
 
