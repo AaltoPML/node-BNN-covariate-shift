@@ -39,6 +39,11 @@ Furthermore, a recent work have showed that BNNs with high fidelity posterior ap
 
 # Node-based Bayesian neural networks
 ## Definition
+
+<p align="center">
+<img src="./assets/node-bnn.png" alt="drawing" width="75%" max-width="750px">
+</p>
+
 Node-BNNs are recently introduced as an efficient alternative to standard weight-based BNNs.
 In a node-BNN, we keep the weights and biases deterministic while inducing uncertainty over the outputs by multiplying hidden nodes with latent random variables:
 
