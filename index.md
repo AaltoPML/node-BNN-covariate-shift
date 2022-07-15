@@ -22,7 +22,7 @@ In this work, we focus on improving generalization of NNs under *input corruptio
 Input corruptions can happen due to noises or sensor malfunctions.
 Some examples of image corruptions from CIFAR-10-C [cite] are shown below:
 
-<img src="./assets/corruption_example.svg" alt="drawing" width="100%" max-width="1000px">
+<img src="./assets/corruption_example.png" alt="drawing" width="100%" max-width="1000px">
 
 # Bayesian neural networks
 Bayesian methods are often applied to covariate shift problems.
@@ -32,7 +32,7 @@ $$p(\theta | \mathcal{D}) \propto p(\mathcal{D}|\theta)p(\theta)$$
 
 The resulting model is aptly named *Bayesian neural networks (BNNs)*.
 
-<img src="./assets/bnn_vs_dnn.svg" alt="drawing" width="100%" max-width="1000px">
+<img src="./assets/bnn_vs_dnn.png" alt="drawing" width="100%" max-width="1000px">
 
 Due to the large amounts of parameters in a modern NNs, it is computationally expensive to approximate the posterior \\(p(\theta \| \mathcal{D})\\). 
 Furthermore, a recent work have showed that BNNs with high fidelity posterior approximations actually perform worse than maximum-a-posteriori (MAP) models under corruptions [cite].
