@@ -22,7 +22,8 @@ In this work, we focus on improving generalization of NNs under *input corruptio
 Input corruptions can happen due to noises or sensor malfunctions.
 Some examples of image corruptions from CIFAR-10-C [cite] are shown below:
 
-<table margin-left="auto" margin-right="auto">
+<p align="center">
+<table>
   <thead>
     <tr>
       <th>Original image</th>
@@ -36,6 +37,7 @@ Some examples of image corruptions from CIFAR-10-C [cite] are shown below:
     </tr>
   </tbody>
 </table>
+</p>
 
 # Bayesian neural networks
 Bayesian methods are often applied to covariate shift problems.
