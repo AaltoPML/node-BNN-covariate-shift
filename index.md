@@ -26,11 +26,13 @@ Some examples of image corruptions from CIFAR-10-C [cite] are shown below:
 
 # Bayesian neural networks
 Bayesian methods are often applied to covariate shift problems.
-The standard Bayesian treatment of NNs is to place a prior distribution \\(p(\theta)\\) over the parameters \\(\theta\\) (weights and biases) and infer their posterior distribution \\(p(\theta \| \mathcal{D})\\) given the training data \\(\mathcal{D}\\) using Bayes' rule:
+The standard Bayesian treatment of NNs is to place a prior distribution \\(p(\theta)\\) over the parameters \\(\theta\\) (weights and biases) and infer their posterior distribution \\(p(\theta \| \mathcal{D})\\) given the training data \\(\mathcal{D}\\) using Bayes' rule [cite]:
 
 $$p(\theta | \mathcal{D}) \propto p(\mathcal{D}|\theta)p(\theta)$$
 
 The resulting model is aptly named *Bayesian neural networks (BNNs)*.
+
+<img src="./assets/bnn_vs_dnn.svg" alt="drawing" width="100%" max-width="1000px">
 
 Due to the large amounts of parameters in a modern NNs, it is computationally expensive to approximate the posterior \\(p(\theta \| \mathcal{D})\\). 
 Furthermore, a recent work have showed that BNNs with high fidelity posterior approximations actually perform worse than maximum-a-posteriori (MAP) models under corruptions [cite].
