@@ -49,7 +49,7 @@ In a node-BNN, we keep the weights and biases deterministic while inducing uncer
 
 \begin{equation}
 \begin{aligned}
-    \mathbf{f}^{(\ell)} (\mathbf{x}, \mathcal{Z}) = \sigma\bigg(\mathbf{W}^{(\ell)}\underbrace{(\mathbf{f}^{(\ell-1)} (\mathbf{x}, \mathcal{Z}) \circ \mathbf{z}^{(\ell)})}_{\text{Hadamard product}} + \mathbf{b}^{(\ell)} \bigg)
+    \mathbf{f}^{(\ell)} (\mathbf{x}; \mathcal{Z}, \theta) = \sigma\bigg(\mathbf{W}^{(\ell)}\underbrace{(\mathbf{f}^{(\ell-1)} (\mathbf{x}; \mathcal{Z}, \theta) \circ \mathbf{z}^{(\ell)})}_{\text{Hadamard product}} + \mathbf{b}^{(\ell)} \bigg)
 \end{aligned}
 \end{equation}
 
@@ -80,6 +80,10 @@ Our goal is to find \\( (\hat{\theta}, \phi) \\) minimizing \\( \mathrm{KL}[q\_{
 \begin{equation}\label{eq:elbo}
     \underbrace{\mathcal{L}(\hat{\theta}, \phi)}\_{\text{ELBO}} = \underbrace{\mathbb{E}\_{q\_{\phi}(\mathcal{Z})}[\log p(\mathcal{D} \| \hat{\theta}, \mathcal{Z})]}\_{\text{expected log-likelihood}} - \underbrace{\mathrm{KL}[q\_{\phi}(\mathcal{Z}) \|\| p(\mathcal{Z})]}\_{\text{KL divergence}} + \underbrace{\log p(\hat{\theta})}\_{\text{log weight prior}}
 \end{equation}
+
+<p align="center">
+<img src="./assets/variational_inference.gif" alt="drawing" width="100%" max-width="1000px">
+</p>
 
 # Why are node-BNNs robust against input corruptions?
 
