@@ -135,7 +135,11 @@ where
 \end{equation}
 Here both the likelihood and the prior are tempered with a temperature \\( \tau = \gamma + 1 \\).
 
-Since \\( \gamma > 0 \\), we have the temperature \\(\tau > 1 \\). In this case, we call the tempered posterior *hot posterior*. We visualize the effect of using a temperature \\(\tau\\) larger than 1 on a example distribution below:
+Since \\( \gamma > 0 \\), we have the temperature \\(\tau > 1 \\). In this case, we call the tempered posterior *hot posterior*. We visualize the effect of using a temperature \\(\tau\\) larger than 1 on an example distribution below:
+
+<p align="center">
+<img src="./assets/gamma_anim.gif" alt="drawing" width="40%" max-width="400px">
+</p>
 
 Overall, larger \\(\tau\\) makes the probability mass of the distribution less concentrated.
 
