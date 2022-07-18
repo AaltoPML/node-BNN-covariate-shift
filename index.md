@@ -117,28 +117,12 @@ However, this objective does not have a closed-form solution due to the non-line
 
 Below, we visualize the corruption masks of some images from the CIFAR-10 dataset from a node-BNN with a simple ConvNet architecture:
 
-<table display="table">
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Corruption mask</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><img src="./assets/horse3.png" alt="drawing" width="100%" max-width="32px"></td>
-      <td><img src="./assets/horse3_mean_mask_animation.gif" alt="drawing" width="100%" max-width="64px"></td>
-    </tr>
-    <tr>
-      <td><img src="./assets/automobile0.png" alt="drawing" width="100%" max-width="32px"></td>
-      <td><img src="./assets/automobile0_mean_mask_animation.gif" alt="drawing" width="100%" max-width="64px"></td>
-    </tr>
-    <tr>
-      <td><img src="./assets/dog1.png" alt="drawing" width="100%" max-width="32px"></td>
-      <td><img src="./assets/dog1_mean_mask_animation.gif" alt="drawing" width="100%" max-width="64px"></td>
-    </tr>
-  </tbody>
-</table>
+| Image | Corruption mask |
+| ------ | --------------- |
+| <img src="./assets/horse3.png" alt="drawing" width="100%" max-width="32px"> | <img src="./assets/horse3_mean_mask_animation.gif" alt="drawing" width="100%" max-width="64px"> |
+| <img src="./assets/automobile0.png" alt="drawing" width="100%" max-width="32px"> | <img src="./assets/automobile0_mean_mask_animation.gif" alt="drawing" width="100%" max-width="64px"> |
+| <img src="./assets/dog1.png" alt="drawing" width="100%" max-width="32px"> | <img src="./assets/dog1_mean_mask_animation.gif" alt="drawing" width="100%" max-width="64px"> |
+
 
 # Improving robustness using entropic regularization
 
