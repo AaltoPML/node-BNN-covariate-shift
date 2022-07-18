@@ -119,7 +119,10 @@ Below, we visualize the corruption masks of some images from the CIFAR-10 datase
 
 | Image | Corruption mask |
 | ------ | --------------- |
-| <img src="./assets/horse3.png" alt="drawing" width="100%" max-width="32px"> | <img src="./assets/horse3_mean_mask_animation.gif" alt="drawing" width="100%" max-width="64px">
+| <img src="./assets/horse3.png" alt="drawing" width="100%" max-width="32px"> | <img src="./assets/horse3_mean_mask_animation.gif" alt="drawing" width="100%" max-width="64px"> |
+| <img src="./assets/automobile0.png" alt="drawing" width="100%" max-width="32px"> | <img src="./assets/automobile0_mean_mask_animation.gif" alt="drawing" width="100%" max-width="64px"> |
+| <img src="./assets/dog1.png" alt="drawing" width="100%" max-width="32px"> | <img src="./assets/dog1_mean_mask_animation.gif" alt="drawing" width="100%" max-width="64px"> |
+
 
 # Improving robustness using entropic regularization
 
