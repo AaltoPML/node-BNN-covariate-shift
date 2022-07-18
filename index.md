@@ -115,7 +115,11 @@ However, this objective does not have a closed-form solution due to the non-line
     \tilde{\mathbf{m}} \approx \operatorname*{argmin}\_{\mathbf{m}} \underbrace{\frac{1}{2} \|\|\mathbf{f}(\mathbf{x}; \mathcal{Z} = \tilde{\mathcal{Z}}, \hat{\theta}) - \hat{\mathbf{f}}(\mathbf{x} + \tilde{\mathbf{m}}; \hat{\theta}) \|\|\_{2}^{2}}\_{\text{Output matching}} + \underbrace{\frac{\lambda}{2} \|\| \mathbf{m} \|\|\_{2}^{2}}\_{\text{L2-regularization}}
 \end{equation}
 
-Below, we visualize the corruption masks of some images from the CIFAR-10 dataset.
+Below, we visualize the corruption masks of some images from the CIFAR-10 dataset from a node-BNN with a simple ConvNet architecture:
+
+| Image | Corruption mask |
+| ------ | --------------- |
+| <img src="./assets/horse3.png" alt="drawing" width="100%" max-width="32px"> | <img src="./assets/horse3_mean_mask_animation.gif" alt="drawing" width="100%" max-width="64px">
 
 # Improving robustness using entropic regularization
 
