@@ -89,6 +89,16 @@ Our goal is to find \\( (\hat{\theta}, \phi) \\) minimizing \\( \mathrm{KL}[q\_{
 
 > **Proposition**: We theorize that the latent distribution (the distribution of the latent variables) \\( p(\mathcal{Z}) \\) induces a distribution of *implicit corruptions* \\(p(\mathbf{x}^{c})\\) in the input space, and by training under these faux corruptions, node-BNNs become robust against natural corruptions.
 
+Given a node-BNN with a MAP estimate \\(\hat{\theta} \\) and a latent distribution \\(p(\mathcal{Z}) \\), there exists a distribution \\(p(\mathbf{x}^{c})\\) such that the output distribution of the following two models are equal:
+
+<p align="center">
+<img src="./assets/nbnn_dnn.svg" alt="drawing" width="70%" max-width="750px">
+</p>
+
+<p align="center">
+<img src="./assets/figA_figB.svg" alt="drawing" width="70%" max-width="750px">
+</p>
+
 ## Approximating the implicit corruptions
 
 If we consider each corrupted input \\( \mathbf{x}^c \\) as a sum of the original input \\( \mathbf{x} \\) and a corruption mask \\(\mathbf{m}\\)
