@@ -93,6 +93,8 @@ Given a node-BNN with a MAP estimate \\(\hat{\theta} \\) and a latent distributi
 <img src="./assets/nbnn_dnn.svg" alt="drawing" width="100%" max-width="1000px">
 </p>
 
+where \\(\hat{\mathbf{f}}(\cdot; \hat{\theta}) = \mathbf{f}(\cdot; \mathcal{Z} = \mathbf{1}, \hat{\theta}) \\) is the deterministic NN obtained by removing all the latent variables in the node-BNN. 
+
 <p align="center">
 <img src="./assets/figA_figB.svg" alt="drawing" width="100%" max-width="1000px">
 </p>
@@ -104,7 +106,7 @@ If we consider each corrupted input \\( \mathbf{x}^c \\) as a sum of the origina
 then given a sample \\( \tilde{\mathcal{Z}} \sim p(\mathcal{Z}) \\), our objective is to find a corruption mask \\( \tilde{\mathbf{m}} \\) such that:
 
 \begin{equation}
-    \mathbf{f}(\mathbf{x}; \mathcal{Z}) = \hat{\mathbf{f}}(\mathbf{x} + \tilde{\mathbf{m}})
+    \mathbf{f}(\mathbf{x}; \mathcal{Z} = \tilde{\mathcal{Z}}, \hat{\theta}) = \hat{\mathbf{f}}(\mathbf{x} + \tilde{\mathbf{m}}; \hat{\theta})
 \end{equation}
 
 However, this objective does not have a closed-form solution due to the non-linearity of the NN. Thus, one can approximate \\( \tilde{\mathbf{m}} \\) by minimizing the following loss function using gradient descent:
