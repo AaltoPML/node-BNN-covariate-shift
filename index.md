@@ -123,6 +123,7 @@ Below, we visualize the corruption masks of some images from the CIFAR-10 datase
 | <img src="./assets/automobile0.png" alt="drawing" width="100%" max-width="32px"> | <img src="./assets/automobile0_mean_mask_animation.gif" alt="drawing" width="100%" max-width="64px"> |
 | <img src="./assets/dog1.png" alt="drawing" width="100%" max-width="32px"> | <img src="./assets/dog1_mean_mask_animation.gif" alt="drawing" width="100%" max-width="64px"> |
 
+We can see that \\(\lambda \\) controls the severities of the corruptions with higher \\(\lambda\\) corresponding to lower severities.
 
 # Improving robustness using entropic regularization
 
