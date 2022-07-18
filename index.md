@@ -8,7 +8,7 @@ description: Trung Trinh, Markus Heinonen, Luigi Acerbi, Samuel Kaski
 
 Node-based Bayesian neural networks (node-BNNs) have demonstrated good generalization under input corruptions.
 
-In this work, we provide insights into the robustness of node-BNNs under corruptions and propose a simple method to further improve this robustness.
+> **TL;DR**: In this work, we provide insights into the robustness of node-BNNs under corruptions and propose a simple method to further improve this robustness.
 
 # Covariate shift due to input corruptions
 Generalization is a core problem in machine learning.
