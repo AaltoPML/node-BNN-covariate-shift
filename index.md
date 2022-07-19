@@ -165,7 +165,14 @@ Interestingly, hot posteriors have been used in classical Bayesian statistics to
 
 # Experiments
 
+
 # Conclusions
+
+1. The distribution of the latent variables induces a distribution of implicit corruptions in the input space and by training under these corruptions, a node-BNN becomes robust against natural corruptions.
+2. Increasing the latent entropy (the entropy of the latent variables) diversifies the implicit corruptions, thereby improving the corruption robustness of the node-BNN.
+3. The latent entropy controls the induced trade-off between ID performance and generalization under corruptions, with more severe corruptions require a higher latent entropy which in turn decreases ID performance.
+4. As a side effect, a high latent entropy also provides robust learning under noisy training labels.
+
 
 ## References
 
