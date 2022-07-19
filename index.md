@@ -99,7 +99,7 @@ where \\(\hat{\mathbf{f}}(\cdot; \hat{\theta}) = \mathbf{f}(\cdot; \mathcal{Z} =
 <img src="./assets/figA_figB.svg" alt="drawing" width="100%" max-width="1000px">
 </p>
 
-## Approximating the implicit corruptions
+## Approximating the implicit corruptions \\(\label{sec:implicit_corruption}\\)
 
 If we consider each corrupted input \\( \mathbf{x}^c \\) as a sum of the original input \\( \mathbf{x} \\) and a corruption mask \\(\mathbf{m}\\)
 
@@ -165,13 +165,19 @@ Interestingly, hot posteriors have been used in classical Bayesian statistics to
 
 # Experiments
 
+## Small experiments
+
+In the small experiments, we compare the corruption robustness of two node-BNNs with a simple ConvNet architecture. One model has a low latent entropy and the other has a higher latent entropy. We trained both models on the CIFAR-10 dataset [cite] and evaluated them on the CIFAR-10-C dataset [cite] consisting of the corrupted versions of the images from the test set of CIFAR-10. In the plot below, we can see that the high latent entropy model is indeed more robust against corruptions than the low latent entropy model.
+
+
+Since one can approximate the implicit corruptions of a model as shown in Section \\(\ref{sec:implicit_corruption}\\)
 
 # Conclusions
 
-1. The distribution of the latent variables induces a distribution of implicit corruptions in the input space and by training under these corruptions, a node-BNN becomes robust against natural corruptions.
-2. Increasing the latent entropy (the entropy of the latent variables) diversifies the implicit corruptions, thereby improving the corruption robustness of the node-BNN.
-3. The latent entropy controls the induced trade-off between ID performance and generalization under corruptions, with more severe corruptions require a higher latent entropy which in turn decreases ID performance.
-4. As a side effect, a high latent entropy also provides robust learning under noisy training labels.
+> 1. The distribution of the latent variables induces a distribution of implicit corruptions in the input space and by training under these corruptions, a node-BNN becomes robust against natural corruptions.
+> 2. Increasing the latent entropy (the entropy of the latent variables) diversifies the implicit corruptions, thereby improving the corruption robustness of the node-BNN.
+> 3. The latent entropy controls the induced trade-off between ID performance and generalization under corruptions, with more severe corruptions require a higher latent entropy which in turn decreases ID performance.
+> 4. As a side effect, a high latent entropy also provides robust learning under noisy training labels.
 
 
 ## References
