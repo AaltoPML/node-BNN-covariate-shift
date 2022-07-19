@@ -261,7 +261,7 @@ Results of PreActResNet18 [11] on TinyImageNet [12]. We chose SWAG [13] and cSG-
 [5] M. Dusenberry et al., “Efficient and Scalable Bayesian Neural Nets with Rank-1 Factors,” in Proceedings of the 37th International Conference on Machine Learning, Jul. 2020, vol. 119, pp. 2782–2792. [Online]. Available: https://proceedings.mlr.press/v119/dusenberry20a.html
 </p>
 <p style="font-size: small;">
-[6] A. Krizhevsky, V. Nair, and G. Hinton, “CIFAR-10 and CIFAR-100 datasets,” URL: https://www.cs.toronto.edu/kriz/cifar.html, 2009.
+[6] A. Krizhevsky, V. Nair, and G. Hinton, “CIFAR-10 and CIFAR-100 datasets,” URL: https://www.cs.toronto.edu/~kriz/cifar.html, 2009.
 </p>
 <p style="font-size: small;">
 [7] P. Grünwald, “The Safe Bayesian,” in Algorithmic Learning Theory, Berlin, Heidelberg, 2012, pp. 169–183. doi: 10.1007/978-3-642-34106-9_16.
