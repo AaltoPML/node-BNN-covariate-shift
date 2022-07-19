@@ -229,32 +229,45 @@ Results of PreActResNet18 [11] on TinyImageNet [12]. We chose SWAG [13] and cSG-
 
 
 ## References
-<div font-size="small">
+<p style="font-size: small;">
 [1] D. Hendrycks and T. Dietterich, “Benchmarking Neural Network Robustness to Common Corruptions and Perturbations,” arXiv:1903.12261 [cs, stat], Mar. 2019, Accessed: Apr. 29, 2021. [Online]. Available: http://arxiv.org/abs/1903.12261
-
+</p>
+<p style="font-size: small;">
 [2] R. M. Neal, Bayesian Learning for Neural Networks, vol. 118. New York, NY: Springer New York, 1996. doi: 10.1007/978-1-4612-0745-0.
-
+</p>
+<p style="font-size: small;">
 [3] P. Izmailov, S. Vikram, M. D. Hoffman, and A. G. Wilson, “What Are Bayesian Neural Network Posteriors Really Like?,” arXiv:2104.14421 [cs, stat], Apr. 2021, Accessed: May 10, 2021. [Online]. Available: http://arxiv.org/abs/2104.14421
-
+</p>
+<p style="font-size: small;">
 [4] Y. Gal and Z. Ghahramani, “Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning,” in Proceedings of The 33rd International Conference on Machine Learning, New York, New York, USA, Jun. 2016, vol. 48, pp. 1050–1059. [Online]. Available: https://proceedings.mlr.press/v48/gal16.html
-
+</p>
+<p style="font-size: small;">
 [5] M. Dusenberry et al., “Efficient and Scalable Bayesian Neural Nets with Rank-1 Factors,” in Proceedings of the 37th International Conference on Machine Learning, Jul. 2020, vol. 119, pp. 2782–2792. [Online]. Available: https://proceedings.mlr.press/v119/dusenberry20a.html
-
+</p>
+<p style="font-size: small;">
 [6] P. Grünwald, “The Safe Bayesian,” in Algorithmic Learning Theory, Berlin, Heidelberg, 2012, pp. 169–183. doi: 10.1007/978-3-642-34106-9_16.
-
+</p>
+<p style="font-size: small;">
 [7] A. Krizhevsky, V. Nair, and G. Hinton, “CIFAR-10 and CIFAR-100 datasets,” URL: https://www.cs.toronto.edu/kriz/cifar.html, 2009.
-
+</p>
+<p style="font-size: small;">
 [8] K. Simonyan and A. Zisserman, “Very deep convolutional networks for large-scale image recognition,” arXiv preprint arXiv:1409.1556, 2014.
-
+</p>
+<p style="font-size: small;">
 [9] D. Arpit et al., “A Closer Look at Memorization in Deep Networks,” in Proceedings of the 34th International Conference on Machine Learning, Aug. 2017, vol. 70, pp. 233–242. [Online]. Available: https://proceedings.mlr.press/v70/arpit17a.html
-
+</p>
+<p style="font-size: small;">
 [10] K. He, X. Zhang, S. Ren, and J. Sun, “Deep residual learning for image recognition,” in Proceedings of the IEEE conference on computer vision and pattern recognition, 2016, pp. 770–778.
-
+</p>
+<p style="font-size: small;">
 [11] K. He, X. Zhang, S. Ren, and J. Sun, “Identity Mappings in Deep Residual Networks,” in Computer Vision – ECCV 2016, Cham, 2016, pp. 630–645.
-
+</p>
+<p style="font-size: small;">
 [12] Y. Le and X. S. Yang, “Tiny ImageNet Visual Recognition Challenge,” 2015.
-
+</p>
+<p style="font-size: small;">
 [13] W. J. Maddox, P. Izmailov, T. Garipov, D. P. Vetrov, and A. G. Wilson, “A Simple Baseline for Bayesian Uncertainty in Deep Learning,” in Advances in Neural Information Processing Systems, 2019, vol. 32. [Online]. Available: https://proceedings.neurips.cc/paper/2019/file/118921efba23fc329e6560b27861f0c2-Paper.pdf
-
+</p>
+<p style="font-size: small;">
 [14] R. Zhang, C. Li, J. Zhang, C. Chen, and A. G. Wilson, “Cyclical Stochastic Gradient MCMC for Bayesian Deep Learning,” 2020. [Online]. Available: https://openreview.net/forum?id=rkeS1RVtPS
-</div>
+</p>
