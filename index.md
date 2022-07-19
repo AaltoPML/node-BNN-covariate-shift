@@ -191,6 +191,15 @@ These results support our hypothesis that maximizing the latent entropy improves
 
 ## Effect of \\(\gamma\\) on corruption robustness
 
+In this experiment, we train node-BNNs with the VGG-16 architecture [cite] on CIFAR-100 [cite] and evaluate them on CIFAR-100-C [cite]. Below, we visualize the NLL of these models as a function of \\(\gamma\\) under different corruption severities, where \\(K\\) is the number of Gaussian components in \\(q_\phi(\mathcal{Z})\\).
+
+<p align="center">
+<img src="./assets/gamma_effect.svg" alt="drawing" width="100%" max-width="1000px">
+</p>
+
+These plots show that for under all corruption severities and different \\(K\\), performance improves as \\(\gamma\\) increases up to an optimal value and then degrades afterwards. More severe corruptions require higher optimal \\(\gamma\\) as shown in the right most plot.
+
+> **Remark**: The latent entropy controls the trade-off between performance on in-distribution (ID) samples and out-of-distribution (OOD) performance, with more severe corruptions require higher latent entropy which in turn decreases the ID performance.
 
 
 # Conclusions
