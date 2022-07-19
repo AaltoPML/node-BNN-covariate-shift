@@ -8,6 +8,22 @@ description: Trung Trinh, Markus Heinonen, Luigi Acerbi, Samuel Kaski
 
 > **TL;DR**: Node-based Bayesian neural networks (node-BNNs) have demonstrated good generalization under input corruptions. In this work, we provide insights into the robustness of node-BNNs under corruptions and propose a simple method to further improve this robustness.
 
+Please cite our work if you find it useful:
+```bibtex
+@InProceedings{pmlr-v162-trinh22a,
+  title = 	 {Tackling covariate shift with node-based {B}ayesian neural networks},
+  author =       {Trinh, Trung and Heinonen, Markus and Acerbi, Luigi and Kaski, Samuel},
+  booktitle = 	 {Proceedings of the 39th International Conference on Machine Learning},
+  pages = 	 {21751--21775},
+  year = 	 {2022},
+  editor = 	 {Chaudhuri, Kamalika and Jegelka, Stefanie and Song, Le and Szepesvari, Csaba and Niu, Gang and Sabato, Sivan},
+  volume = 	 {162},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {17--23 Jul},
+  publisher =    {PMLR},
+}
+```
+
 # Covariate shift due to input corruptions
 Generalization is a core problem in machine learning.
 The standard set up in supervised learning is to fit a model to a training dataset \\(\mathcal{D}\_{train}\\) and then evaluate its generalization ability on a separate test dataset \\(\mathcal{D}\_{test}\\). Both of these datasets are assumed to contain independent and identically distributed (i.i.d.) samples from the data distribution \\(p(x)\\).
