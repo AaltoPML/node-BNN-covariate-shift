@@ -201,6 +201,20 @@ These plots show that for under all corruption severities and different \\(K\\),
 
 > **Remark**: The latent entropy controls the trade-off between performance on in-distribution (ID) samples and out-of-distribution (OOD) performance, with more severe corruptions require higher latent entropy which in turn decreases the ID performance.
 
+## Robust learning against label noises
+
+> **Proposition**: Learning generalizable patterns from correctly labelled samples is easier than memorizing random patterns from wrongly labelled samples [cite]. Thus, if we corrupt wrongly labelled samples with sufficiently diverse corruptions then the model will fail to memorize these spurious patterns.
+
+<p align="center">
+<img src="./assets/label_noise.svg" alt="drawing" width="100%" max-width="1000px">
+</p>
+
+To test this hypothesis, we trained a node-BNN with the ResNet18 architecture [cite] on CIFAR-10 [cite] where we randomly selected 40% of the training samples and corrupted their labels. On the left plot, we show the average NLL of the training samples with correct and incorrect labels separately. The high avg. NLL of training samples with noisy labels at high \\(\gamma\\) indicates that the model fails to memorize these samples.
+Hence, the model achieves better generalization on the clean test set at high \\(\gamma\\), as shown on the right plot.
+
+## Benchmark results
+
+
 
 # Conclusions
 
