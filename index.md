@@ -214,7 +214,11 @@ Hence, the model achieves better generalization on the clean test set at high \\
 
 ## Benchmark results
 
+<p align="center">
+<img src="./assets/benchmark_preactresnet18_tinyimagenet_error_bar.svg" alt="drawing" width="100%" max-width="1000px">
+</p>
 
+Results of PreActResNet18 [11] on TinyImageNet [12]. We chose SWAG [13] and cSG-HMC [14] as weight-based BNN baselines. Overall, the entropy regularized node-BNN performs best under corruptions in all metrics and is only worse than the baselines in expected calibration error on corruption level 0 and 1.
 
 # Conclusions
 
@@ -244,3 +248,11 @@ Hence, the model achieves better generalization on the clean test set at high \\
 [9] D. Arpit et al., “A Closer Look at Memorization in Deep Networks,” in Proceedings of the 34th International Conference on Machine Learning, Aug. 2017, vol. 70, pp. 233–242. [Online]. Available: https://proceedings.mlr.press/v70/arpit17a.html
 
 [10] K. He, X. Zhang, S. Ren, and J. Sun, “Deep residual learning for image recognition,” in Proceedings of the IEEE conference on computer vision and pattern recognition, 2016, pp. 770–778.
+
+[11] K. He, X. Zhang, S. Ren, and J. Sun, “Identity Mappings in Deep Residual Networks,” in Computer Vision – ECCV 2016, Cham, 2016, pp. 630–645.
+
+[12] Y. Le and X. S. Yang, “Tiny ImageNet Visual Recognition Challenge,” 2015.
+
+[13] W. J. Maddox, P. Izmailov, T. Garipov, D. P. Vetrov, and A. G. Wilson, “A Simple Baseline for Bayesian Uncertainty in Deep Learning,” in Advances in Neural Information Processing Systems, 2019, vol. 32. [Online]. Available: https://proceedings.neurips.cc/paper/2019/file/118921efba23fc329e6560b27861f0c2-Paper.pdf
+
+[14] R. Zhang, C. Li, J. Zhang, C. Chen, and A. G. Wilson, “Cyclical Stochastic Gradient MCMC for Bayesian Deep Learning,” 2020. [Online]. Available: https://openreview.net/forum?id=rkeS1RVtPS
