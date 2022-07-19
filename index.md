@@ -99,7 +99,7 @@ where \\(\hat{\mathbf{f}}(\cdot; \hat{\theta}) = \mathbf{f}(\cdot; \mathcal{Z} =
 <img src="./assets/figA_figB.svg" alt="drawing" width="100%" max-width="1000px">
 </p>
 
-## Approximating the implicit corruptions \\(\label{sec:implicit_corruption}\\)
+## Approximating the implicit corruptions
 
 If we consider each corrupted input \\( \mathbf{x}^c \\) as a sum of the original input \\( \mathbf{x} \\) and a corruption mask \\(\mathbf{m}\\)
 
@@ -170,7 +170,9 @@ Interestingly, hot posteriors have been used in classical Bayesian statistics to
 In the small experiments, we compare the corruption robustness of two node-BNNs with a simple ConvNet architecture. One model has a low latent entropy and the other has a higher latent entropy. We trained both models on the CIFAR-10 dataset [cite] and evaluated them on the CIFAR-10-C dataset [cite] consisting of the corrupted versions of the images from the test set of CIFAR-10. In the plot below, we can see that the high latent entropy model is indeed more robust against corruptions than the low latent entropy model.
 
 
-Since one can approximate the implicit corruptions of a model as shown in Section \\(\ref{sec:implicit_corruption}\\)
+Since one can approximate the implicit corruptions of a model as shown [above](#approximating-the-implicit-corruptions), we use each model to generate a set of implicit corruptions, and then evaluate each model on its own generated corruptions to confirm whether or not each model is robust against its own corruptions.
+
+
 
 # Conclusions
 
