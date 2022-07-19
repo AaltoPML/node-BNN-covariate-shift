@@ -131,7 +131,7 @@ However, this objective does not have a closed-form solution due to the non-line
     \tilde{\mathbf{m}} \approx \operatorname*{argmin}\_{\mathbf{m}} \underbrace{\frac{1}{2} \|\|\mathbf{f}(\mathbf{x}; \mathcal{Z} = \tilde{\mathcal{Z}}, \hat{\theta}) - \hat{\mathbf{f}}(\mathbf{x} + \tilde{\mathbf{m}}; \hat{\theta}) \|\|\_{2}^{2}}\_{\text{Output matching}} + \underbrace{\frac{\lambda}{2} \|\| \mathbf{m} \|\|\_{2}^{2}}\_{\text{L2-regularization}}
 \end{equation}
 
-Below, we visualize the corruption masks of some images from the CIFAR-10 dataset from a node-BNN with a simple ConvNet architecture:
+Below, we visualize the corruption masks of some images from CIFAR-10 [6] from a node-BNN with a simple ConvNet architecture:
 
 | Image | Corruption mask |
 | ------ | --------------- |
@@ -177,13 +177,13 @@ Since \\( \gamma > 0 \\), we have the temperature \\(\tau > 1 \\). In this case,
 
 Overall, larger \\(\gamma\\) makes the probability mass of the distribution less concentrated.
 
-Interestingly, hot posteriors have been used in classical Bayesian statistics to alleviate model misspecification [6]. One can view covariate shift as a model misspecification problem, since we use a model trained under different assumptions about the statistics of the data.
+Interestingly, hot posteriors have been used in classical Bayesian statistics to alleviate model misspecification [7]. One can view covariate shift as a model misspecification problem, since we use a model trained under different assumptions about the statistics of the data.
 
 # Experiments
 
 ## Small experiments
 
-In the small experiments, we compare the corruption robustness of two node-BNNs with a simple ConvNet architecture. One model has a low latent entropy and the other has a higher latent entropy. We trained both models on CIFAR-10 [7] and evaluated them on CIFAR-10-C [1] consisting of the corrupted versions of the images from the test set of CIFAR-10. **In the plot below, we can see that the high latent entropy model is indeed more robust against corruptions than the low latent entropy model.**
+In the small experiments, we compare the corruption robustness of two node-BNNs with a simple ConvNet architecture. One model has a low latent entropy and the other has a higher latent entropy. We trained both models on CIFAR-10 [6] and evaluated them on CIFAR-10-C [1] consisting of the corrupted versions of the images from the test set of CIFAR-10. **In the plot below, we can see that the high latent entropy model is indeed more robust against corruptions than the low latent entropy model.**
 
 <p align="center">
 <img src="./assets/nll16_32_all_conv_error.svg" alt="drawing" width="40%" max-width="400px">
@@ -207,7 +207,7 @@ These results support our hypothesis that maximizing the latent entropy improves
 
 ## Effect of \\(\gamma\\) on corruption robustness
 
-In this experiment, we train node-BNNs with the VGG-16 architecture [8] on CIFAR-100 [7] and evaluate them on CIFAR-100-C [1]. Below, we visualize the NLL of these models as a function of \\(\gamma\\) under different corruption severities, where \\(K\\) is the number of Gaussian components in \\(q_\phi(\mathcal{Z})\\).
+In this experiment, we train node-BNNs with the VGG-16 architecture [8] on CIFAR-100 [6] and evaluate them on CIFAR-100-C [1]. Below, we visualize the NLL of these models as a function of \\(\gamma\\) under different corruption severities, where \\(K\\) is the number of Gaussian components in \\(q_\phi(\mathcal{Z})\\).
 
 <p align="center">
 <img src="./assets/gamma_effect.svg" alt="drawing" width="100%" max-width="1000px">
@@ -225,7 +225,7 @@ These plots show that for under all corruption severities and different \\(K\\),
 <img src="./assets/label_noise.svg" alt="drawing" width="100%" max-width="1000px">
 </p>
 
-To test this hypothesis, we trained a node-BNN with the ResNet18 architecture [10] on CIFAR-10 [7] where we randomly selected 40% of the training samples and corrupted their labels. On the left plot, we show the average NLL of the training samples with correct and incorrect labels separately. The high avg. NLL of training samples with noisy labels at high \\(\gamma\\) indicates that the model fails to memorize these samples.
+To test this hypothesis, we trained a node-BNN with the ResNet18 architecture [10] on CIFAR-10 [6] where we randomly selected 40% of the training samples and corrupted their labels. On the left plot, we show the average NLL of the training samples with correct and incorrect labels separately. The high avg. NLL of training samples with noisy labels at high \\(\gamma\\) indicates that the model fails to memorize these samples.
 Hence, the model achieves better generalization on the clean test set at high \\(\gamma\\), as shown on the right plot.
 
 ## Benchmark results
@@ -261,10 +261,10 @@ Results of PreActResNet18 [11] on TinyImageNet [12]. We chose SWAG [13] and cSG-
 [5] M. Dusenberry et al., “Efficient and Scalable Bayesian Neural Nets with Rank-1 Factors,” in Proceedings of the 37th International Conference on Machine Learning, Jul. 2020, vol. 119, pp. 2782–2792. [Online]. Available: https://proceedings.mlr.press/v119/dusenberry20a.html
 </p>
 <p style="font-size: small;">
-[6] P. Grünwald, “The Safe Bayesian,” in Algorithmic Learning Theory, Berlin, Heidelberg, 2012, pp. 169–183. doi: 10.1007/978-3-642-34106-9_16.
+[6] A. Krizhevsky, V. Nair, and G. Hinton, “CIFAR-10 and CIFAR-100 datasets,” URL: https://www.cs.toronto.edu/kriz/cifar.html, 2009.
 </p>
 <p style="font-size: small;">
-[7] A. Krizhevsky, V. Nair, and G. Hinton, “CIFAR-10 and CIFAR-100 datasets,” URL: https://www.cs.toronto.edu/kriz/cifar.html, 2009.
+[7] P. Grünwald, “The Safe Bayesian,” in Algorithmic Learning Theory, Berlin, Heidelberg, 2012, pp. 169–183. doi: 10.1007/978-3-642-34106-9_16.
 </p>
 <p style="font-size: small;">
 [8] K. Simonyan and A. Zisserman, “Very deep convolutional networks for large-scale image recognition,” arXiv preprint arXiv:1409.1556, 2014.
