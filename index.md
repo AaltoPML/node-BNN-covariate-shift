@@ -18,13 +18,13 @@ Currently, neural networks (NNs) have excellent ID performance while behave unpr
 
 In this work, we focus on improving generalization of NNs under *input corruptions*, which is a form of covariate shift.
 Input corruptions can happen due to noises or sensor malfunctions.
-Some examples of image corruptions from CIFAR-10-C [cite] are shown below:
+Some examples of image corruptions from CIFAR-10-C [1] are shown below:
 
 <img src="./assets/corruption_example.png" alt="drawing" width="100%" max-width="1000px">
 
 # Bayesian neural networks
 Bayesian methods are often applied to covariate shift problems.
-The standard Bayesian treatment of NNs is to place a prior distribution \\(p(\theta)\\) over the parameters \\(\theta\\) (weights and biases) and infer their posterior distribution \\(p(\theta \| \mathcal{D})\\) given the training data \\(\mathcal{D}\\) using Bayes' rule [cite]:
+The standard Bayesian treatment of NNs is to place a prior distribution \\(p(\theta)\\) over the parameters \\(\theta\\) (weights and biases) and infer their posterior distribution \\(p(\theta \| \mathcal{D})\\) given the training data \\(\mathcal{D}\\) using Bayes' rule [2]:
 
 $$p(\theta | \mathcal{D}) \propto p(\mathcal{D}|\theta)p(\theta)$$
 
@@ -33,7 +33,7 @@ The resulting model is aptly named *Bayesian neural networks (BNNs)*.
 <img src="./assets/bnn_vs_dnn.png" alt="drawing" width="100%" max-width="1000px">
 
 Due to the large amounts of parameters in a modern NNs, it is computationally expensive to approximate the posterior \\(p(\theta \| \mathcal{D})\\). 
-Furthermore, a recent work have showed that BNNs with high fidelity posterior approximations actually perform worse than maximum-a-posteriori (MAP) models under corruptions [cite].
+Furthermore, a recent work have showed that BNNs with high fidelity posterior approximations actually perform worse than maximum-a-posteriori (MAP) models under corruptions [3].
 
 # Node-based Bayesian neural networks
 ## Definition
@@ -42,7 +42,7 @@ Furthermore, a recent work have showed that BNNs with high fidelity posterior ap
 <img src="./assets/node-bnn.png" alt="drawing" width="75%" max-width="750px">
 </p>
 
-Node-BNNs are recently introduced as an efficient alternative to standard weight-based BNNs.
+Node-BNNs are recently introduced as an efficient alternative to standard weight-based BNNs. Examples of node-BNNs include MC-Dropout [4] and Rank-1 BNNs [5].
 In a node-BNN, we keep the weights and biases deterministic while inducing uncertainty over the outputs by multiplying hidden nodes with latent random variables:
 
 \begin{equation}
@@ -161,13 +161,13 @@ Since \\( \gamma > 0 \\), we have the temperature \\(\tau > 1 \\). In this case,
 
 Overall, larger \\(\gamma\\) makes the probability mass of the distribution less concentrated.
 
-Interestingly, hot posteriors have been used in classical Bayesian statistics to alleviate model misspecification [cite]. One can view covariate shift as a model misspecification problem, since we use a model trained under different assumptions about the statistics of the data.
+Interestingly, hot posteriors have been used in classical Bayesian statistics to alleviate model misspecification [6]. One can view covariate shift as a model misspecification problem, since we use a model trained under different assumptions about the statistics of the data.
 
 # Experiments
 
 ## Small experiments
 
-In the small experiments, we compare the corruption robustness of two node-BNNs with a simple ConvNet architecture. One model has a low latent entropy and the other has a higher latent entropy. We trained both models on the CIFAR-10 dataset [cite] and evaluated them on the CIFAR-10-C dataset [cite] consisting of the corrupted versions of the images from the test set of CIFAR-10. **In the plot below, we can see that the high latent entropy model is indeed more robust against corruptions than the low latent entropy model.**
+In the small experiments, we compare the corruption robustness of two node-BNNs with a simple ConvNet architecture. One model has a low latent entropy and the other has a higher latent entropy. We trained both models on CIFAR-10 [7] and evaluated them on CIFAR-10-C [1] consisting of the corrupted versions of the images from the test set of CIFAR-10. **In the plot below, we can see that the high latent entropy model is indeed more robust against corruptions than the low latent entropy model.**
 
 <p align="center">
 <img src="./assets/nll16_32_all_conv_error.svg" alt="drawing" width="40%" max-width="400px">
@@ -191,7 +191,7 @@ These results support our hypothesis that maximizing the latent entropy improves
 
 ## Effect of \\(\gamma\\) on corruption robustness
 
-In this experiment, we train node-BNNs with the VGG-16 architecture [cite] on CIFAR-100 [cite] and evaluate them on CIFAR-100-C [cite]. Below, we visualize the NLL of these models as a function of \\(\gamma\\) under different corruption severities, where \\(K\\) is the number of Gaussian components in \\(q_\phi(\mathcal{Z})\\).
+In this experiment, we train node-BNNs with the VGG-16 architecture [8] on CIFAR-100 [7] and evaluate them on CIFAR-100-C [1]. Below, we visualize the NLL of these models as a function of \\(\gamma\\) under different corruption severities, where \\(K\\) is the number of Gaussian components in \\(q_\phi(\mathcal{Z})\\).
 
 <p align="center">
 <img src="./assets/gamma_effect.svg" alt="drawing" width="100%" max-width="1000px">
@@ -203,13 +203,13 @@ These plots show that for under all corruption severities and different \\(K\\),
 
 ## Robust learning against label noises
 
-> **Proposition**: Learning generalizable patterns from correctly labelled samples is easier than memorizing random patterns from wrongly labelled samples [cite]. Thus, if we corrupt wrongly labelled samples with sufficiently diverse corruptions then the model will fail to memorize these spurious patterns.
+> **Proposition**: Learning generalizable patterns from correctly labelled samples is easier than memorizing random patterns from wrongly labelled samples [9]. Thus, if we corrupt wrongly labelled samples with sufficiently diverse corruptions then the model will fail to memorize these spurious patterns.
 
 <p align="center">
 <img src="./assets/label_noise.svg" alt="drawing" width="100%" max-width="1000px">
 </p>
 
-To test this hypothesis, we trained a node-BNN with the ResNet18 architecture [cite] on CIFAR-10 [cite] where we randomly selected 40% of the training samples and corrupted their labels. On the left plot, we show the average NLL of the training samples with correct and incorrect labels separately. The high avg. NLL of training samples with noisy labels at high \\(\gamma\\) indicates that the model fails to memorize these samples.
+To test this hypothesis, we trained a node-BNN with the ResNet18 architecture [10] on CIFAR-10 [7] where we randomly selected 40% of the training samples and corrupted their labels. On the left plot, we show the average NLL of the training samples with correct and incorrect labels separately. The high avg. NLL of training samples with noisy labels at high \\(\gamma\\) indicates that the model fails to memorize these samples.
 Hence, the model achieves better generalization on the clean test set at high \\(\gamma\\), as shown on the right plot.
 
 ## Benchmark results
@@ -225,4 +225,22 @@ Hence, the model achieves better generalization on the clean test set at high \\
 
 
 ## References
+[1] D. Hendrycks and T. Dietterich, “Benchmarking Neural Network Robustness to Common Corruptions and Perturbations,” arXiv:1903.12261 [cs, stat], Mar. 2019, Accessed: Apr. 29, 2021. [Online]. Available: http://arxiv.org/abs/1903.12261
 
+[2] R. M. Neal, Bayesian Learning for Neural Networks, vol. 118. New York, NY: Springer New York, 1996. doi: 10.1007/978-1-4612-0745-0.
+
+[3] P. Izmailov, S. Vikram, M. D. Hoffman, and A. G. Wilson, “What Are Bayesian Neural Network Posteriors Really Like?,” arXiv:2104.14421 [cs, stat], Apr. 2021, Accessed: May 10, 2021. [Online]. Available: http://arxiv.org/abs/2104.14421
+
+[4] Y. Gal and Z. Ghahramani, “Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning,” in Proceedings of The 33rd International Conference on Machine Learning, New York, New York, USA, Jun. 2016, vol. 48, pp. 1050–1059. [Online]. Available: https://proceedings.mlr.press/v48/gal16.html
+
+[5] M. Dusenberry et al., “Efficient and Scalable Bayesian Neural Nets with Rank-1 Factors,” in Proceedings of the 37th International Conference on Machine Learning, Jul. 2020, vol. 119, pp. 2782–2792. [Online]. Available: https://proceedings.mlr.press/v119/dusenberry20a.html
+
+[6] P. Grünwald, “The Safe Bayesian,” in Algorithmic Learning Theory, Berlin, Heidelberg, 2012, pp. 169–183. doi: 10.1007/978-3-642-34106-9_16.
+
+[7] A. Krizhevsky, V. Nair, and G. Hinton, “CIFAR-10 and CIFAR-100 datasets,” URL: https://www.cs.toronto.edu/kriz/cifar.html, 2009.
+
+[8] K. Simonyan and A. Zisserman, “Very deep convolutional networks for large-scale image recognition,” arXiv preprint arXiv:1409.1556, 2014.
+
+[9] D. Arpit et al., “A Closer Look at Memorization in Deep Networks,” in Proceedings of the 34th International Conference on Machine Learning, Aug. 2017, vol. 70, pp. 233–242. [Online]. Available: https://proceedings.mlr.press/v70/arpit17a.html
+
+[10] K. He, X. Zhang, S. Ren, and J. Sun, “Deep residual learning for image recognition,” in Proceedings of the IEEE conference on computer vision and pattern recognition, 2016, pp. 770–778.
