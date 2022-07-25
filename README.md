@@ -1,3 +1,30 @@
+# Tackling covariate shift with node-based Bayesian neural networks
+
+This repository contains a PyTorch implementation of the paper
+
+[Tackling covariate shift with node-based Bayesian neural networks](https://proceedings.mlr.press/v162/trinh22a.html)
+
+by Trung Trinh, Markus Heinonen, Luigi Acerbi and Samuel Kaski
+
+For more information about the paper, please visit the [website](https://aaltopml.github.io/node-BNN-covariate-shift).
+
+Please cite our work if you find it useful:
+
+```bibtex
+@InProceedings{pmlr-v162-trinh22a,
+  title = 	 {Tackling covariate shift with node-based {B}ayesian neural networks},
+  author =       {Trinh, Trung and Heinonen, Markus and Acerbi, Luigi and Kaski, Samuel},
+  booktitle = 	 {Proceedings of the 39th International Conference on Machine Learning},
+  pages = 	 {21751--21775},
+  year = 	 {2022},
+  editor = 	 {Chaudhuri, Kamalika and Jegelka, Stefanie and Song, Le and Szepesvari, Csaba and Niu, Gang and Sabato, Sivan},
+  volume = 	 {162},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {17--23 Jul},
+  publisher =    {PMLR},
+}
+```
+
 ## Installation
 
 ```bash
