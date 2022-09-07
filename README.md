@@ -49,7 +49,7 @@ pip install -r requirements.txt
 
 Training VGG16 on CIFAR-10
 ```bash
-srun python train_node_bnn.py.py with model_name=StoVGG16 validation=False validation_fraction=5000 augment_data=True "kl_type=upper_bound" "gamma=<GAMMA>" entropy_type=BD \
+srun python train_node_bnn.py with model_name=StoVGG16 validation=False validation_fraction=5000 augment_data=True "kl_type=upper_bound" "gamma=<GAMMA>" entropy_type=BD \
                           num_epochs=300 save_freq=301 logging_freq=1 'kl_weight.kl_min=0.0' "kl_weight.kl_max=1.0" 'kl_weight.last_iter=200' lr_ratio_det=0.01 lr_ratio_sto=1.0 \
                           prior_std=0.30 prior_mean=1.0 "det_params.weight_decay=0.0005" n_components=4 dataset=cifar10 "posterior_mean_init=(1.0,0.05)" "posterior_std_init=(0.30,0.02)" \
                           "det_params.lr=0.05" 'sto_params.lr'=0.05 'sto_params.weight_decay=0.0' "sto_params.momentum=0.0" 'sto_params.nesterov=True' 'num_train_sample'=4 bn_momentum=0.1 \
@@ -59,7 +59,7 @@ srun python train_node_bnn.py.py with model_name=StoVGG16 validation=False valid
 ```
 Training VGG16 on CIFAR-100
 ```bash
-srun python train_node_bnn.py.py with model_name=StoVGG16 validation=False validation_fraction=5000 augment_data=True "kl_type=upper_bound" "gamma=<GAMMA>" entropy_type=BD \
+srun python train_node_bnn.py with model_name=StoVGG16 validation=False validation_fraction=5000 augment_data=True "kl_type=upper_bound" "gamma=<GAMMA>" entropy_type=BD \
                           num_epochs=300 save_freq=301 logging_freq=1 'kl_weight.kl_min=0.0' "kl_weight.kl_max=1.0" 'kl_weight.last_iter=200' lr_ratio_det=0.01 lr_ratio_sto=1.0 \
                           prior_std=0.30 prior_mean=1.0 "det_params.weight_decay=0.0005" n_components=4 dataset=cifar100 "posterior_mean_init=(1.0,0.05)" "posterior_std_init=(0.30,0.02)" \
                           "det_params.lr=0.05" 'sto_params.lr'=0.05 'sto_params.weight_decay=0.0' "sto_params.momentum=0.0" 'sto_params.nesterov=True' 'num_train_sample'=4 bn_momentum=0.1 \
@@ -69,7 +69,7 @@ srun python train_node_bnn.py.py with model_name=StoVGG16 validation=False valid
 ```
 Training ResNet18 on CIFAR-10
 ```bash
-srun python train_node_bnn.py.py with model_name=StoResNet18 validation=False validation_fraction=5000 augment_data=True "kl_type=upper_bound" "gamma=<GAMMA>" entropy_type=BD \
+srun python train_node_bnn.py with model_name=StoResNet18 validation=False validation_fraction=5000 augment_data=True "kl_type=upper_bound" "gamma=<GAMMA>" entropy_type=BD \
                           num_epochs=300 save_freq=301 logging_freq=1 'kl_weight.kl_min=0.0' "kl_weight.kl_max=1.0" 'kl_weight.last_iter=200' lr_ratio_det=0.01 lr_ratio_sto=1.0 \
                           prior_std=0.40 prior_mean=1.0 "det_params.weight_decay=0.0005" n_components=4 dataset=cifar10 "posterior_mean_init=(1.0,0.05)" "posterior_std_init=(0.40,0.02)" \
                           "det_params.lr=0.10" 'sto_params.lr'=0.10 'sto_params.weight_decay=0.0' "sto_params.momentum=0.0" 'sto_params.nesterov=True' 'num_train_sample'=4 bn_momentum=0.1 \
@@ -79,7 +79,7 @@ srun python train_node_bnn.py.py with model_name=StoResNet18 validation=False va
 ```
 Training ResNet18 on CIFAR-100
 ```bash
-srun python train_node_bnn.py.py with model_name=StoResNet18 validation=False validation_fraction=5000 augment_data=True "kl_type=upper_bound" "gamma=<GAMMA>" entropy_type=BD \
+srun python train_node_bnn.py with model_name=StoResNet18 validation=False validation_fraction=5000 augment_data=True "kl_type=upper_bound" "gamma=<GAMMA>" entropy_type=BD \
                           num_epochs=300 save_freq=301 logging_freq=1 'kl_weight.kl_min=0.0' "kl_weight.kl_max=1.0" 'kl_weight.last_iter=200' lr_ratio_det=0.01 lr_ratio_sto=1.0 \
                           prior_std=0.40 prior_mean=1.0 "det_params.weight_decay=0.0005" n_components=4 dataset=cifar100 "posterior_mean_init=(1.0,0.05)" "posterior_std_init=(0.40,0.02)" \
                           "det_params.lr=0.10" 'sto_params.lr'=0.10 'sto_params.weight_decay=0.0' "sto_params.momentum=0.0" 'sto_params.nesterov=True' 'num_train_sample'=4 bn_momentum=0.1 \
