@@ -42,7 +42,7 @@ def my_config():
     ece_bins = 15
     seed = 1  # Random seed
     name = 'name'  # Unique name for the folder of the experiment
-    model_name = 'StoWideResNet28x10'  # Choose with model to train
+    model_name = 'StoResNet18'  # Choose with model to train
     # the KL weight will increase from <kl_min> to <kl_max> for <last_iter> iterations.
     kl_weight = {
         'kl_min': 0.0,
