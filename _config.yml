@@ -1,6 +1,6 @@
 theme: jekyll-theme-cayman
 arxiv_url: https://proceedings.mlr.press/v162/trinh22a.html
 poster_url: https://github.com/AaltoPML/node-BNN-covariate-shift/blob/master/poster.pdf
-video_url: https://icml.cc/virtual/2022/oral/17368
+video_url: https://slideslive.com/38983108
 title: Tackling covariate shift with node-based Bayesian neural networks
 tagline: This website contains information regarding the paper Tackling covariate shift with node-based Bayesian neural networks.
