@@ -38,6 +38,7 @@ bash download_scripts/download_cifar10_c.sh
 bash download_scripts/download_cifar100_c.sh
 bash download_scripts/download_tinyimagenet.sh
 bash download_scripts/download_tinyimagenet_c.sh
+```
 
 ## File Structure
 
