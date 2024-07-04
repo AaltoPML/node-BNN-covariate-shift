@@ -40,7 +40,7 @@ def bd_bound(pos_mean, pos_std):
     pairwise_var_sum = posvar.unsqueeze(1) + posvar.unsqueeze(0)
     logstd = posstdflat.log().sum(1)
     pairwise_std_logprod = logstd.unsqueeze(1) + logstd.unsqueeze(0)
-    first_dist = (pairwise_mean_dis.square()/pairwise_var_sum).sum(2)/16
+    first_dist = (pairwise_mean_dis.square()/pairwise_var_sum).sum(2)*0.25
     second_dist = 0.5*(torch.log(0.5*pairwise_var_sum).sum(2)-pairwise_std_logprod)
     pairwise_dist = first_dist + second_dist
     log_dist = torch.logsumexp(-pairwise_dist, dim=1) - torch.log(torch.tensor(pos_mean.size(0), dtype=torch.float32, device=pos_mean.device))
